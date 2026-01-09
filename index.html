@@ -4,106 +4,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applied AI Quiz | แบบทดสอบการประยุกต์ใช้ AI</title>
+    <title>Applied AI in Healthcare | การประยุกต์ใช้ AI ในการแพทย์</title>
+    <meta name="description"
+        content="สำรวจอนาคตของการดูแลสุขภาพด้วยปัญญาประดิษฐ์ การวินิจฉัยโรค การค้นพบยา และหุ่นยนต์ช่วยผ่าตัด">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Sarabun:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 
 <body>
-    <div class="app-container">
-        <!-- Start Screen / Category Selection -->
-        <div id="start-screen" class="screen active">
-            <header>
-                <h1>Applied AI Quiz</h1>
-                <p>ทดสอบความรู้การประยุกต์ใช้ AI ในด้านต่างๆ</p>
-            </header>
+    <nav class="navbar">
+        <div class="logo">Medical<span>AI</span></div>
+        <ul class="nav-links">
+            <li><a href="#hero">หน้าแรก</a></li>
+            <li><a href="#diagnosis">การวินิจฉัย</a></li>
+            <li><a href="#drug-discovery">การพัฒนายา</a></li>
+            <li><a href="#robotics">หุ่นยนต์การแพทย์</a></li>
+            <li><a href="../applied-ai-quiz/index.html" class="nav-btn">แบบทดสอบ AI</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-            <div class="category-grid">
-                <div class="category-card" onclick="startGame('Healthcare')">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Healthcare</h3>
-                    <p>การแพทย์และสุขภาพ</p>
+    <header id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>พลิกโฉมการแพทย์ด้วย<br><span class="highlight">ปัญญาประดิษฐ์</span></h1>
+            <p>ยกระดับการดูแลสุขภาพ ยืดอายุขัย และสร้างความเป็นไปได้ใหม่ๆ ด้วยเทคโนโลยี AI อัจฉริยะ</p>
+            <a href="#introduction" class="cta-button">เรียนรู้เพิ่มเติม</a>
+        </div>
+        <div class="hero-visual">
+            <img src="225.webp" alt="AI Healthcare" class="hero-img">
+            <div class="ai-brain-pulse"></div>
+        </div>
+    </header>
+
+    <section id="introduction" class="intro-section">
+        <div class="container">
+            <h2>AI กับอนาคตของ Healthcare</h2>
+            <p class="section-desc">ปัญญาประดิษฐ์ไม่ได้เป็นเพียงเรื่องของอนาคต แต่กำลังช่วยชีวิตผู้คนในปัจจุบัน
+                ตั้งแต่การวิเคราะห์ภาพถ่ายทางการแพทย์ไปจนถึงการวางแผนการรักษาเฉพาะบุคคล</p>
+        </div>
+    </section>
+
+    <section id="diagnosis" class="feature-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>การวินิจฉัยโรคแม่นยำ (Diagnosis)</h2>
+                <div class="line"></div>
+            </div>
+            <div class="content-grid">
+                <div class="text-content">
+                    <h3>ตรวจจับโรคร้ายได้เร็วกว่าที่เคย</h3>
+                    <p>AI สามารถวิเคราะห์ภาพ X-ray, MRI และ CT Scan ได้รวดเร็วและแม่นยำกว่ามนุษย์
+                        ช่วยให้แพทย์ตรวจพบสัญญาณของมะเร็ง โรคหัวใจ และความผิดปกติทางสมองได้ตั้งแต่ระยะเริ่มต้น</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> วิเคราะห์ภาพถ่ายรังสีด้วย Deep Learning</li>
+                        <li><i class="fas fa-check-circle"></i> ลดความผิดพลาดในการวินิจฉัย (Human Error)</li>
+                        <li><i class="fas fa-check-circle"></i> คัดกรองผู้ป่วยความเสี่ยงสูงอัตโนมัติ</li>
+                    </ul>
                 </div>
-                <div class="category-card" onclick="startGame('Finance')">
-                    <i class="fas fa-coins"></i>
-                    <h3>Finance</h3>
-                    <p>การเงินและธนาคาร</p>
-                </div>
-                <div class="category-card" onclick="startGame('Business')">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Business</h3>
-                    <p>ธุรกิจและการตลาด</p>
-                </div>
-                <div class="category-card" onclick="startGame('Manufacturing')">
-                    <i class="fas fa-industry"></i>
-                    <h3>Manufacturing</h3>
-                    <p>การผลิตและอุตสาหกรรม</p>
-                </div>
-                <div class="category-card" onclick="startGame('Education')">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Education</h3>
-                    <p>การศึกษา</p>
-                </div>
-                <div class="category-card" onclick="startGame('Legal')">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Legal & Admin</h3>
-                    <p>กฎหมายและงานเอกสาร</p>
-                </div>
-                <div class="category-card mixed" onclick="startGame('Mixed')">
-                    <i class="fas fa-random"></i>
-                    <h3>รวมทุกหมวด</h3>
-                    <p>สุ่มคำถาม 15 ข้อ</p>
+                <div class="visual-content card-glass">
+                    <i class="fas fa-x-ray fa-4x icon-glow"></i>
+                    <div class="stat-box">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">ความแม่นยำในการตรวจจับ</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Quiz Screen -->
-        <div id="quiz-screen" class="screen">
-            <div class="quiz-header">
-                <div class="quiz-info">
-                    <span id="category-badge">Healthcare</span>
-                    <span id="question-count">1/10</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
+    <section id="drug-discovery" class="feature-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>เร่งสปีดการค้นพบยา (Drug Discovery)</h2>
+                <div class="line"></div>
             </div>
-
-            <div class="question-container">
-                <h2 id="question-text">AI คืออะไร?</h2>
-            </div>
-
-            <div class="options-container" id="options-container">
-                <!-- Options will be injected here -->
+            <div class="content-grid reverse">
+                <div class="text-content">
+                    <h3>นวัตกรรมยาใหม่เพื่อมวลมนุษยชาติ</h3>
+                    <p>กระบวนการพัฒนายาแบบดั้งเดิมใช้เวลาเป็นสิบปี แต่ AI
+                        สามารถจำลองโครงสร้างโมเลกุลและทํานายประสิทธิภาพของยาได้ในเวลาเพียงไม่กี่วัน
+                        ลดต้นทุนและเวลาในการนำยาเข้าสู่ตลาด</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-dna"></i> จำลองการจับคู่โมเลกุล (Molecular Docking)</li>
+                        <li><i class="fas fa-microscope"></i> ทํานายผลข้างเคียงที่อาจเกิดขึ้น</li>
+                        <li><i class="fas fa-flask"></i> ลดระยะเวลาวิจัยจากปีเป็นเดือน</li>
+                    </ul>
+                </div>
+                <div class="visual-content card-glass">
+                    <i class="fas fa-capsules fa-4x icon-glow"></i>
+                    <div class="stat-box">
+                        <span class="stat-number">10x</span>
+                        <span class="stat-label">เร็วกว่าวิธีดั้งเดิม</span>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Result Screen -->
-        <div id="result-screen" class="screen">
-            <div class="result-content">
-                <i class="fas fa-trophy result-icon"></i>
-                <h2>จบการทดสอบ!</h2>
-                <div class="score-box">
-                    <span id="final-score">8</span>
-                    <span class="total-score">/ 10</span>
+    <section id="robotics" class="feature-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>หุ่นยนต์ช่วยผ่าตัด (Medical Robotics)</h2>
+                <div class="line"></div>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-robot"></i>
+                    <h4><a href="https://www.synphaet.co.th/lamlukka/%E0%B8%AB%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%95%E0%B8%B1%E0%B8%94/"
+                            target="_blank" style="text-decoration: none; color: inherit;">ความแม่นยำระระดับไมครอน</a>
+                    </h4>
+                    <p>หุ่นยนต์แขนกลที่ควบคุมโดยแพทย์ร่วมกับ AI ช่วยให้การผ่าตัดในจุดที่ละเอียดอ่อนทำได้ปลอดภัยยิ่งขึ้น
+                    </p>
                 </div>
-                <p id="result-message">ยอดเยี่ยมมาก!</p>
-                <button class="restart-btn" onclick="resetGame()">
-                    <i class="fas fa-redo"></i> เล่นอีกครั้ง
-                </button>
-                <a href="../healthcare-ai/index.html" class="home-link">กลับสู่หน้าหลัก Healthcare AI</a>
+                <div class="card">
+                    <i class="fas fa-user-nurse"></i>
+                    <h4>ผู้ช่วยพยาบาลอัจฉริยะ</h4>
+                    <p>หุ่นยนต์ดูแลผู้ป่วย ช่วยวัดไข้ จ่ายยา และเฝ้าระวังสัญญาณชีพตลอด 24 ชั่วโมง</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-notes-medical"></i>
+                    <h4>Telemedicine</h4>
+                    <p>ระบบตรวจรักษาทางไกลที่ผสาน AI ช่วยให้ผู้ป่วยในพื้นที่ห่างไกลเข้าถึงแพทย์ผู้เชี่ยวชาญได้</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Load Data and Logic -->
-    <script src="questions.js"></script>
-    <script src="logic.js"></script>
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Medical<span>AI</span></h3>
+                <p>สู่อนาคตที่สุขภาพดีกว่าด้วยเทคโนโลยี</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">หน้าแรก</a>
+                <a href="#">เกี่ยวกับเรา</a>
+                <a href="#">นโยบายความเป็นส่วนตัว</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 AI Healthcare Showcase. Created for Education.
+        </div>
+    </footer>
 </body>
 
 </html>
