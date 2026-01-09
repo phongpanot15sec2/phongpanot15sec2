@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI Quiz | แบบทดสอบการประยุกต์ใช้ AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&family=Sarabun:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Start Screen / Category Selection -->
+        <div id="start-screen" class="screen active">
+            <header>
+                <h1>Applied AI Quiz</h1>
+                <p>ทดสอบความรู้การประยุกต์ใช้ AI ในด้านต่างๆ</p>
+            </header>
+
+            <div class="category-grid">
+                <div class="category-card" onclick="startGame('Healthcare')">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Healthcare</h3>
+                    <p>การแพทย์และสุขภาพ</p>
+                </div>
+                <div class="category-card" onclick="startGame('Finance')">
+                    <i class="fas fa-coins"></i>
+                    <h3>Finance</h3>
+                    <p>การเงินและธนาคาร</p>
+                </div>
+                <div class="category-card" onclick="startGame('Business')">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Business</h3>
+                    <p>ธุรกิจและการตลาด</p>
+                </div>
+                <div class="category-card" onclick="startGame('Manufacturing')">
+                    <i class="fas fa-industry"></i>
+                    <h3>Manufacturing</h3>
+                    <p>การผลิตและอุตสาหกรรม</p>
+                </div>
+                <div class="category-card" onclick="startGame('Education')">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>การศึกษา</p>
+                </div>
+                <div class="category-card" onclick="startGame('Legal')">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Legal & Admin</h3>
+                    <p>กฎหมายและงานเอกสาร</p>
+                </div>
+                <div class="category-card mixed" onclick="startGame('Mixed')">
+                    <i class="fas fa-random"></i>
+                    <h3>รวมทุกหมวด</h3>
+                    <p>สุ่มคำถาม 15 ข้อ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="category-badge">Healthcare</span>
+                    <span id="question-count">1/10</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">AI คืออะไร?</h2>
+            </div>
+
+            <div class="options-container" id="options-container">
+                <!-- Options will be injected here -->
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="result-content">
+                <i class="fas fa-trophy result-icon"></i>
+                <h2>จบการทดสอบ!</h2>
+                <div class="score-box">
+                    <span id="final-score">8</span>
+                    <span class="total-score">/ 10</span>
+                </div>
+                <p id="result-message">ยอดเยี่ยมมาก!</p>
+                <button class="restart-btn" onclick="resetGame()">
+                    <i class="fas fa-redo"></i> เล่นอีกครั้ง
+                </button>
+                <a href="../healthcare-ai/index.html" class="home-link">กลับสู่หน้าหลัก Healthcare AI</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Data and Logic -->
+    <script src="questions.js"></script>
+    <script src="logic.js"></script>
+</body>
+
+</html>
